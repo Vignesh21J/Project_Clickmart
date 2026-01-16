@@ -8,6 +8,8 @@ from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from products import views as ProductViews
 
+from carts import views as CartViews
+
 
 urlpatterns = [
     path('register/', UserViews.RegisterView.as_view()),
@@ -24,6 +26,10 @@ urlpatterns = [
 
     # product detail
     path('products/<int:pk>/', ProductViews.ProductDetailView.as_view()),
+
+    
+    # Cart APIs
+    path('cart/', CartViews.CartView.as_view()),
 ]
 
 if settings.DEBUG:
