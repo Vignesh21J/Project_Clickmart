@@ -30,6 +30,12 @@ urlpatterns = [
     
     # Cart APIs
     path('cart/', CartViews.CartView.as_view()),
+
+    # Add to Cart
+    path('cart/add/', CartViews.AddToCartView.as_view()),
+
+    # Manage cart
+    path('cart/items/<int:item_id>/', CartViews.ManageCartItemView.as_view()),
 ]
 
 if settings.DEBUG:
